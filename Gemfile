@@ -25,6 +25,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 gem 'nested_form_fields'
 
+gem 'carrierwave', '~> 1.0'
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
