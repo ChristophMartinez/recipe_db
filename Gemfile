@@ -25,6 +25,11 @@ gem 'nested_form_fields'
 
 gem 'carrierwave', '~> 1.0'
 
+gem 'fog-aws'
+
+gem 'devise', '~>4.5'
+
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :production do 
