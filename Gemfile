@@ -27,8 +27,11 @@ gem 'carrierwave', '~> 1.0'
 
 gem 'fog-aws'
 
+gem 'fog'
+
 gem 'devise', '~>4.5'
 
+gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

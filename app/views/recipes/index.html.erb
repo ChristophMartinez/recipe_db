@@ -14,6 +14,7 @@
           <li><%= recipe.title %></li>
           <li><%= recipe.description %></li>
           <li><%= link_to 'Show', recipe %> | 
+
             <%= link_to 'Edit', edit_recipe_path(recipe)%> |
             <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul><!--ul-->
