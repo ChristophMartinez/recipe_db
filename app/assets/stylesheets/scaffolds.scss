@@ -7,19 +7,22 @@ body {
   line-height: 18px;
 }
 
-p, ol, ul, td {
+p, ol, ul, td 
+{
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
-pre {
+pre 
+{
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
 
-a {
+a 
+{
   color: #000;
 
   &:visited {
@@ -32,31 +35,37 @@ a {
   }
 }
 
-th {
+th 
+{
   padding-bottom: 5px;
 }
 
-td {
+td 
+{
   padding: 0 5px 7px;
 }
 
-div {
+div 
+{
   &.field, &.actions {
     margin-bottom: 10px;
   }
 }
 
-#notice {
+#notice 
+{
   color: green;
 }
 
-.field_with_errors {
+.field_with_errors 
+{
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-#error_explanation {
+#error_explanation 
+{
   width: 450px;
   border: 2px solid red;
   padding: 7px 7px 0;
