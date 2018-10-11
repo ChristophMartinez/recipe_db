@@ -8,30 +8,34 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+<body>
+  <header class="navbar navbar-default" role="navigation">
+    <div class="navbar-inner">
+      <div class="container">
+        <div id="logo" class-"navibar-brand"><%= link_to"Recipe App", root_path %></div>
+        <nav class="collapse navbar-collapse navbar-exl-collapse">
 
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  
-  <%= link_to "Recipe App", root_path, class: 'navbar-brand' %>
-  
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav nav-btn navbar-left">
-      <p class="navbar-text pull-left">
 <% if user_signed_in? %>
-  Logged in as <strong><%=current_user.email %></strong>.
-  <% link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+  <ul class ="navbar-nav navbar-right">
+    Logged in as <strong><%= current_user.email %></strong>.
+    <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+</ul>
+
 <% else %>
-  <% link_to "Sign up", new_user_session_path, :class => 'navbar-link' %>
+  <ul class="nav navbar-nav pull-right">
+    <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+    <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+  </ul>
 <% end %>
-</p>
-      <li><%= link_to "About", pages_about_path %></li>
-    </ul>
-  </div>
 </nav>
+</div>
+</div>
+</header>
 
   <body>
-    <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
     <%= yield %>
 
   </body>

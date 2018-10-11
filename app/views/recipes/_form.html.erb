@@ -10,54 +10,48 @@
       </ul>
     </div>
   <% end %>
-  
   <div class="form-group">
-    <%= form.file_field :image %>
+      <%= form.file_field :image %>
+      <% if @recipe.image? %>
+        <%= image_tag @recipe.image.url, class: "recipe-show" %>
+        <%= form.check_box :remove_image %>
+          Remove Image
+        <% end %>
 
-    <% if @recipe.image? %>
-
-      <%= image_tag @recipe.image.url, class: "recipe-show" %>
-
-      <%= form.check_box :remove_image %>
-
-        Remove Image
-
-  <% end %>
-</div>
+  </div> 
 
   <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :recipe_title, class: "form-control" %>
+    <%= form.text_field :title, id: :recipe_title, class: "form-control"%> 
   </div>
 
   <div class="form-group">
     <%= form.label :description %>
     <%= form.text_area :description, id: :recipe_description, class: "form-control" %>
   </div>
-
-<h3>Add Ingredients</h3>
   <div class="form-group">
-    <%= form.nested_fields_for :ingredients do |
-        ingredients| %>
-        <%= ingredients.text_field :content %>
-        <%= ingredients.remove_nested_fields_link %>
+  <h3>Add Ingredients</h3>
+    <%= form.nested_fields_for :ingredients do |ingredient| %>
 
-  <% end %>
-    <%= form.add_nested_fields_link :ingredients %>
+      <%= ingredient.text_field :content %>
+      <%= ingredient.remove_nested_fields_link %>
+
+      <% end %>
+        <%= form.add_nested_fields_link :ingredients %>
   </div>
-  
-<h3>Add Steps</h3>
-<div class="form-group">
-    <%= form.nested_fields_for :steps do |
-        step| %>
-        <%= step.text_field :direction %>
+
+  <div class="form-group">
+    <h3>Add Steps</h3>
+    <%= form.nested_fields_for :steps do |step| %>
+       <%= step.text_field :direction %>
         <%= step.remove_nested_fields_link %>
 
-  <% end %>
-    <%= form.add_nested_fields_link :steps %>
+      <% end %>
+        <%= form.add_nested_fields_link :steps %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+

@@ -43,3 +43,4 @@ class RecipesTest < ApplicationSystemTestCase
     assert_text "Recipe was successfully destroyed"
   end
 end
+

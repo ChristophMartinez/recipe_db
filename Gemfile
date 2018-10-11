@@ -19,7 +19,9 @@ gem 'turbolinks', '~> 5'
 
 gem 'jbuilder', '~> 2.5'
 
-gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'bootsnap', '>= 1.1.2', require: false
+
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
@@ -29,7 +31,7 @@ gem 'carrierwave', '~> 1.0'
 
 gem 'devise', '~> 4.5' 
 
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'fog-aws'
 
 group :production do 
   gem 'pg'
@@ -39,7 +41,6 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'listen'
 end
 
 group :development do
